@@ -35,7 +35,7 @@ int countPairs3(int *arr, int len, int value) {
                     count++; chto_to--;
                 }
                 chto_to = Middle + 1;
-                while (chto_to <= RightSide && arr[Mchto_to] == key) {
+                while (chto_to <= RightSide && arr[chto_to] == key) {
                     count++; chto_to++;
                 }
                 break;
