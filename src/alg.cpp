@@ -1,4 +1,8 @@
 // Copyright 2021 NNTU-CS
+int countPairs1(const int*, int, int);
+int countPairs2(const int*, int, int);
+int countPairs3(const int*, int, int);
+
 int countPairs1(const int* arr, int len, int value) {
   int count = 0;
   for (int i = 0; i < len; i++) {
