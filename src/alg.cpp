@@ -29,8 +29,12 @@ int countPairs3(int *arr, int len, int value) {
             int Middle = LeftSide + (RightSide - LeftSide) / 2;
             if (arr[Middle] == key) {
                 count++;
-                while (Middle - 1 >= LeftSide && arr[Middle - 1] == key) { count++; Middle -= 2; }
-                while (Middle + 1 <= RightSide && arr[Middle + 1] == key) { count++; Middle += 2; }
+                while (Middle - 1 >= LeftSide && arr[Middle - 1] == key) {
+                    count++; Middle -= 2;
+                }
+                while (Middle + 1 <= RightSide && arr[Middle + 1] == key) {
+                    count++; Middle += 2; 
+                }
                 break;
             }
             else if (arr[Middle] < key) LeftSide = Middle + 1;
