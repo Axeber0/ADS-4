@@ -21,30 +21,32 @@ int countPairs2(int *arr, int len, int value) {
 }
 
 int countPairs3(int *arr, int len, int value) {
-    int count = 0;
-    for (int i = 0; i < len; i++) {
-        int key = value - arr[i];
-        int LeftSide = i + 1;
-        int RightSide = len - 1;
-        while (LeftSide <= RightSide) {
-            int Middle = LeftSide + (RightSide - LeftSide) / 2;
-            if (arr[Middle] == key) {
-                count++;
-                int chto_to = Middle - 1;
-                while (chto_to >= LeftSide && arr[chto_to] == key) {
-                    count++; chto_to--;
-                }
-                chto_to = Middle + 1;
-                while (chto_to <= RightSide && arr[chto_to] == key) {
-                    count++; chto_to++;
-                }
-                break;
-            } else if (arr[Middle] < key) {
-                LeftSide = Middle + 1;
-            } else {
-                RightSide = Middle - 1;
-            }
+  int count = 0;
+  for (int i = 0; i < len; i++) {
+    int key = value - arr[i];
+    int LeftSide = i + 1;
+    int RightSide = len - 1;
+    while (LeftSide <= RightSide) {
+      int Middle = LeftSide + (RightSide - LeftSide) / 2;
+      if (arr[Middle] == key) {
+        count++;
+        int chto_to = Middle - 1;
+        while (chto_to >= LeftSide && arr[chto_to] == key) {
+          count++; 
+          chto_to--;
         }
+        chto_to = Middle + 1;
+        while (chto_to <= RightSide && arr[chto_to] == key) {
+          count++; 
+          chto_to++;
+        }
+        break;
+      } else if (arr[Middle] < key) {
+        LeftSide = Middle + 1;
+      } else {
+        RightSide = Middle - 1;
+      }
     }
-    return count;
+  }
+  return count;
 }
